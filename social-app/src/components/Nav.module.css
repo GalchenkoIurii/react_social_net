@@ -1,7 +1,10 @@
 ul {
     list-style-type: none;
 }
-.nav{
+.nav {
     grid-area: navigation;
     background-color: cornflowerblue;
+}
+.item.link {
+    color: #fff;
 }
