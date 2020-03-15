@@ -6,7 +6,9 @@ const Posts = () => {
     return (
             <div>
                 <h3>Posts</h3>
-                <Post/>
+                <Post title="First post" postContent="First post content"/>
+                <Post title="Second post" postContent="Second post content"/>
+                <Post title="Third post" postContent="Third post content"/>
             </div>
     );
 }

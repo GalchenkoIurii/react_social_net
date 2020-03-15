@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
                 <div>
-                    <h4>Post 1</h4>
-                    <p>Post content</p>
+                    <h4>{props.title}</h4>
+                    <p>{props.postContent}</p>
                 </div>
     );
 }
