@@ -9,6 +9,8 @@
   max-width: 1200px;
 }
 
-
+.app-content {
+  grid-area: content;
+}
 
 
