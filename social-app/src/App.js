@@ -5,17 +5,24 @@ import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Profile from "./components/Profile/Profile";
 import Messages from "./components/Messages/Messages";
+import Posts from "./components/Posts/Posts";
+import News from "./components/News/News";
+import {BrowserRouter, Route} from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="app-wrapper">
-        <Header />
-        <Nav />
-        <div className="app-content">
-            {/*<Profile />*/}
-            <Messages />
-        </div>
-    </div>
+      <BrowserRouter>
+          <div className="app-wrapper">
+              <Header />
+              <Nav />
+              <div className="app-content">
+                  <Route path='/profile' component={Profile}/>
+                  <Route path='/messages' component={Messages}/>
+                  <Route path='/posts' component={Posts}/>
+                  <Route path='/news' component={News}/>
+              </div>
+          </div>
+      </BrowserRouter>
   );
 }
 
