@@ -1,3 +1,7 @@
-.main-img img{
+.app-content {
+    grid-area: content;
+}
+
+.mainImg img{
     width: 100%;
 }

@@ -6,11 +6,9 @@
   grid-template-rows: 140px 1fr;
   grid-template-columns: 2fr 10fr;
   margin: 0 auto;
-  max-width: 1200px;
+  width: 100%;
 }
 
-.app-content {
-  grid-area: content;
-}
+
 
 

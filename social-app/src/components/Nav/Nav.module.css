@@ -1,10 +1,25 @@
 ul {
     list-style-type: none;
 }
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
 .nav {
     grid-area: navigation;
     background-color: cornflowerblue;
+    padding: 20px;
 }
+
 .item.link {
     color: #fff;
 }

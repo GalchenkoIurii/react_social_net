@@ -2,6 +2,12 @@
     grid-area: header;
     background-color: #3d4b53;
 }
-.header img{
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header .container img{
     width: 200px;
 }
