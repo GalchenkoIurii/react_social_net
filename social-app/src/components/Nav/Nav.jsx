@@ -6,10 +6,10 @@ const Nav = () => {
     return (
         <nav className={classes.nav}>
             <ul>
-                <li className={`${classes.item} ${classes.link}`}><NavLink to="/profile">Profile</NavLink></li>
-                <li className="item"><NavLink to="/messages">Messages</NavLink></li>
-                <li className="item"><NavLink to="/posts">Posts</NavLink></li>
-                <li className="item"><NavLink to="/news">News</NavLink></li>
+                <li className={`${classes.item} ${classes.link}`}><NavLink to="/profile" activeClassName={classes.active}>Profile</NavLink></li>
+                <li className="item"><NavLink to="/messages" activeClassName={classes.active}>Messages</NavLink></li>
+                <li className="item"><NavLink to="/posts" activeClassName={classes.active}>Posts</NavLink></li>
+                <li className="item"><NavLink to="/news" activeClassName={classes.active}>News</NavLink></li>
             </ul>
         </nav>
     );

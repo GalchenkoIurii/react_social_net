@@ -1,3 +1,24 @@
 .app-content {
     grid-area: content;
 }
+
+.messagesContainer {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+
+.users {
+
+}
+
+.user {
+
+}
+
+.messages {
+
+}
+
+.message {
+
+}
