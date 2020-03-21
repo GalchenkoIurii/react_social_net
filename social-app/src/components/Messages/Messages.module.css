@@ -5,10 +5,16 @@
 .messagesContainer {
     display: grid;
     grid-template-columns: 3fr 9fr;
+    margin: 50px 80px;
 }
 
 .users {
 
+}
+
+.users .active {
+    font-weight: bolder;
+    margin-left: 20px;
 }
 
 .user {

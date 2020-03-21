@@ -1,4 +1,8 @@
-.app-wrapper{
+h2 {
+  text-align: center;
+}
+
+.app-wrapper {
   display: grid;
   grid-template-areas:
   "header header"

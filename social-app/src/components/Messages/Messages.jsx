@@ -7,7 +7,7 @@ const Messages = (props) => {
             <h2>Messages</h2>
             <div className={classes.messagesContainer}>
                 <div className={classes.users}>
-                    <div className={classes.user}>
+                    <div className={`${classes.user} ${classes.active}`}>
                         John
                     </div>
                     <div className={classes.user}>
