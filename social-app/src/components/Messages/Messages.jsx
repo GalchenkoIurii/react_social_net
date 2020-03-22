@@ -1,5 +1,24 @@
 import React from 'react';
 import classes from './Messages.module.css';
+import {NavLink} from "react-router-dom";
+
+const User = (props) => {
+    let path = "/messages/" + props.id;
+
+    return (
+        <div className={classes.user}>
+            <NavLink to={path} activeClassName={classes.active}>{props.name}</NavLink>
+        </div>
+    );
+}
+
+const Message = (props) => {
+    return (
+        <div className={classes.message}>
+            {props.message}
+        </div>
+    );
+}
 
 const Messages = (props) => {
     return (
@@ -7,26 +26,14 @@ const Messages = (props) => {
             <h2>Messages</h2>
             <div className={classes.messagesContainer}>
                 <div className={classes.users}>
-                    <div className={`${classes.user} ${classes.active}`}>
-                        John
-                    </div>
-                    <div className={classes.user}>
-                        Jack
-                    </div>
-                    <div className={classes.user}>
-                        James
-                    </div>
+                    <User name="John" id="john" />
+                    <User name="Jack" id="jack" />
+                    <User name="James" id="james" />
                 </div>
                 <div className={classes.messages}>
-                    <div className={classes.message}>
-                        Some message
-                    </div>
-                    <div className={classes.message}>
-                        One more message
-                    </div>
-                    <div className={classes.message}>
-                        And one more message
-                    </div>
+                    <Message message="First message" />
+                    <Message message="One more message" />
+                    <Message message="And one more message"/>
                 </div>
             </div>
         </section>
