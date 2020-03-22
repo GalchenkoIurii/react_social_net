@@ -2,6 +2,10 @@
     grid-area: content;
 }
 
-.postsWrapper {
+.mainImg img{
+    width: 100%;
+}
+
+.profileInfoWrapper {
     margin: 20px;
 }
