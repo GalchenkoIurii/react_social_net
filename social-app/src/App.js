@@ -17,7 +17,7 @@ const App = (props) => {
               <Nav />
               <div className="app-content">
                   <Route path='/profile' component={Profile}/>
-                  <Route path='/messages' component={Messages}/>
+                  <Route path='/messages' render={ () => <Messages usersData={props.usersData} messagesData={props.messagesData}/> }/>
                   <Route path='/posts' component={Posts}/>
                   <Route path='/news' component={News}/>
               </div>

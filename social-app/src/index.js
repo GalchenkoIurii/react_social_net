@@ -16,12 +16,7 @@ let messagesData = [
     {id: 3, message: "And one more message"}
 ];
 
-let props = {
-    usersData: usersData,
-    messagesData: messagesData
-};
-
-ReactDOM.render(<App data={props} />, document.getElementById('root'));
+ReactDOM.render(<App usersData={usersData} messagesData={messagesData} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
