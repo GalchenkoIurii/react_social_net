@@ -4,7 +4,24 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let usersData = [
+    {id: "john", name: "John"},
+    {id: "jack", name: "Jack"},
+    {id: "james", name: "James"}
+];
+
+let messagesData = [
+    {id: 1, message: "First message"},
+    {id: 2, message: "One more message"},
+    {id: 3, message: "And one more message"}
+];
+
+let props = {
+    usersData: usersData,
+    messagesData: messagesData
+};
+
+ReactDOM.render(<App data={props} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

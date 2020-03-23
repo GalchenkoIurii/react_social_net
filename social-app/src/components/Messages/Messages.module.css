@@ -20,7 +20,8 @@ a:hover {
 
 .users .active {
     font-weight: bolder;
-    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 4px solid #61dafb;
 }
 
 .user {
