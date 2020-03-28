@@ -5,9 +5,9 @@ import Message from "./Message/Message";
 
 const Messages = (props) => {
 
-    let users = props.usersData.map( user => <User name={user.name} id={user.id} /> );
+    let users = props.state.usersData.map( user => <User name={user.name} id={user.id} /> );
 
-    let messages = props.messagesData.map( message => <Message message={message.message} /> );
+    let messages = props.state.messagesData.map( message => <Message message={message.message} /> );
 
     return (
         <section>

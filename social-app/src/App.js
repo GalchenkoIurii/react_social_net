@@ -16,9 +16,9 @@ const App = (props) => {
               <Header />
               <Nav />
               <div className="app-content">
-                  <Route path='/profile' component={Profile}/>
-                  <Route path='/messages' render={ () => <Messages usersData={props.state.usersData} messagesData={props.state.messagesData}/> }/>
-                  <Route path='/posts' component={Posts}/>
+                  <Route path='/profile' render={ () => <Profile state={props.state}/> }/>
+                  <Route path='/messages' render={ () => <Messages state={props.state} /> }/>
+                  <Route path='/posts' render={ () => <Posts state={props.state} /> }/>
                   <Route path='/news' component={News}/>
               </div>
           </div>
