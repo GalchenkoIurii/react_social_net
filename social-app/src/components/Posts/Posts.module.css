@@ -5,3 +5,13 @@
 .postsWrapper {
     margin: 20px;
 }
+
+.addPostWrapper {
+    margin: 20px;
+}
+
+form textarea {
+    display: block;
+    margin-bottom: 20px;
+}
+
