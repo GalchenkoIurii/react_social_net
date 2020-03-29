@@ -7,11 +7,10 @@ import Profile from "./components/Profile/Profile";
 import Messages from "./components/Messages/Messages";
 import Posts from "./components/Posts/Posts";
 import News from "./components/News/News";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 const App = (props) => {
   return (
-      <BrowserRouter>
           <div className="app-wrapper">
               <Header />
               <Nav state={props.state} />
@@ -22,7 +21,6 @@ const App = (props) => {
                   <Route path='/news' component={News}/>
               </div>
           </div>
-      </BrowserRouter>
   );
 }
 
