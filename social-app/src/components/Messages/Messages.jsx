@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Messages.module.css';
 import User from "./User/User";
 import Message from "./Message/Message";
+import AddMessage from "./AddMessage/AddMessage";
 
 const Messages = (props) => {
 
@@ -18,6 +19,7 @@ const Messages = (props) => {
                 </div>
                 <div className={classes.messages}>
                     {messages}
+                    <AddMessage />
                 </div>
             </div>
         </section>

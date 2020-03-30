@@ -36,9 +36,27 @@ a:hover {
 }
 
 .messages {
-
+    margin: 20px;
 }
 
 .message {
+    padding: 10px 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #2d9f9f;
+    width: fit-content;
+    max-width: 50%;
+}
 
+.addMessageWrapper {
+}
+
+form {
+    margin-top: 40px;
+}
+
+form textarea {
+    display: grid;
+    grid-template-columns: 12fr;
+    margin: 20px 0;
 }
