@@ -1,4 +1,6 @@
-import {render} from "../render";
+let render = () => {
+    console.log('state changed');
+};
 
 let state = {
     usersData: [
@@ -24,7 +26,7 @@ let state = {
     ]
 };
 
-export let addMessage = () => {
+export const addMessage = () => {
     let newMessage = {
         id: 4,
         message: state.newMessageData
@@ -37,14 +39,14 @@ export let addMessage = () => {
     render(state);
 };
 
-export let updateNewMessageData = (newMessageText) => {
+export const updateNewMessageData = (newMessageText) => {
 
     state.newMessageData = newMessageText;
 
     render(state);
 };
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 4,
         title: "Fourth post",
@@ -58,11 +60,15 @@ export let addPost = () => {
     render(state);
 };
 
-export let updateNewPostData = (newPostText) => {
+export const updateNewPostData = (newPostText) => {
 
     state.newPostData = newPostText;
 
     render(state);
+};
+
+export const subscribe = (observer) => {
+    render = observer;
 };
 
 export default state;
