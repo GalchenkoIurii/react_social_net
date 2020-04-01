@@ -8,7 +8,7 @@ const AddPost = (props) => {
     let addPost = (event) => {
         event.preventDefault();
         let postText = newPost.current.value;
-        alert(postText);
+        props.addPost(postText);
     };
 
     return (
@@ -20,6 +20,6 @@ const AddPost = (props) => {
                 </form>
             </div>
     );
-}
+};
 
 export default AddPost;
