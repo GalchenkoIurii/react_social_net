@@ -1,3 +1,5 @@
+import {render} from "../render";
+
 let state = {
     usersData: [
         {id: "john", name: "John", avatarUrl: "https://www.arbse.net/Files/Warcraft3_tft/id149/warcraft_3_solution.jpg"},
@@ -9,25 +11,58 @@ let state = {
         {id: 2, message: "One more message"},
         {id: 3, message: "And one more message"}
     ],
+    newMessageData: "",
     postsData: [
         {id: 1, title: "First post", postContent: "First post content"},
         {id: 2, title: "Second post", postContent: "Second post content"},
         {id: 3, title: "Third post", postContent: "Third post content"}
     ],
+    newPostData: "",
     contactsData: [
         {id: 1, name: "Genry", avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2EWiPWkXNn2VBN_RdN0nJ2Rn5huij1ovZQZmetyG03Armpnf2"},
         {id: 2, name: "Andrew", avatarUrl: "https://cdn.igromania.ru/mnt/news/d/6/e/d/a/d/87586/e0d6d89899ada4cf_1920xH.jpg"}
     ]
 };
 
-export let addPost = (postContent) => {
+export let addMessage = () => {
+    let newMessage = {
+        id: 4,
+        message: state.newMessageData
+    };
+
+    state.messagesData.push(newMessage);
+
+    state.newMessageData = "";
+
+    render(state);
+};
+
+export let updateNewMessageData = (newMessageText) => {
+
+    state.newMessageData = newMessageText;
+
+    render(state);
+};
+
+export let addPost = () => {
     let newPost = {
         id: 4,
         title: "Fourth post",
-        postContent: postContent
+        postContent: state.newPostData
     };
 
     state.postsData.push(newPost);
+
+    state.newPostData = "";
+
+    render(state);
+};
+
+export let updateNewPostData = (newPostText) => {
+
+    state.newPostData = newPostText;
+
+    render(state);
 };
 
 export default state;

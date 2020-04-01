@@ -5,19 +5,20 @@ const AddPost = (props) => {
 
     let newPost = React.createRef();
 
-    let addPost = (event) => {
-        event.preventDefault();
+    let addPost = () => {
+        props.addPost();
+    };
+
+    let onPostChange = () => {
         let postText = newPost.current.value;
-        props.addPost(postText);
+        props.updateNewPostData(postText);
     };
 
     return (
             <div className={classes.addPostWrapper}>
                 <h2>Add Post</h2>
-                <form action="">
-                    <textarea ref={newPost} name="" id="" cols="30" rows="6"></textarea>
+                    <textarea onChange={onPostChange} ref={newPost} value={props.newPostData} name="" id="" cols="30" rows="6" />
                     <button onClick={addPost}>Add Post</button>
-                </form>
             </div>
     );
 };

@@ -7,10 +7,10 @@ const Profile = (props) => {
     return (
         <section>
             <ProfileInfo />
-            <AddPost addPost={props.addPost} />
+            <AddPost addPost={props.addPost} newPostData={props.state.newPostData} updateNewPostData={props.updateNewPostData} />
             <Posts state={props.state} />
         </section>
     );
-}
+};
 
 export default Profile;

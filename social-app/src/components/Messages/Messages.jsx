@@ -19,7 +19,7 @@ const Messages = (props) => {
                 </div>
                 <div className={classes.messages}>
                     {messages}
-                    <AddMessage />
+                    <AddMessage newMessageData={props.state.newMessageData} addMessage={props.addMessage} updateNewMessageData={props.updateNewMessageData} />
                 </div>
             </div>
         </section>

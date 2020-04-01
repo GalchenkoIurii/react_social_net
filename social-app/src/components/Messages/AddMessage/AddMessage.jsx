@@ -5,20 +5,21 @@ const AddMessage = (props) => {
 
     let newMessage = React.createRef();
 
-    let addMessage = (event) => {
-        event.preventDefault();
-        let postText = newMessage.current.value;
-        alert(postText);
+    let addMessage = () => {
+        props.addMessage();
+    };
+
+    let onMessageChange = () => {
+        let messageText = newMessage.current.value;
+        props.updateNewMessageData(messageText);
     };
 
     return (
              <div className={classes.addMessageWrapper}>
-                <form action="">
-                    <textarea ref={newMessage} name="" id="" cols="30" rows="6"></textarea>
+                    <textarea onChange={onMessageChange} ref={newMessage} value={props.newMessageData} name="" id="" cols="30" rows="6" />
                     <button onClick={addMessage}>Add Message</button>
-                </form>
             </div>
     );
-}
+};
 
 export default AddMessage;
