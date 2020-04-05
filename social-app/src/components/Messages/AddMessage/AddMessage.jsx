@@ -6,12 +6,12 @@ const AddMessage = (props) => {
     let newMessage = React.createRef();
 
     let addMessage = () => {
-        props.addMessage();
+        props.dispatch({type: "ADD-MESSAGE"});
     };
 
     let onMessageChange = () => {
         let messageText = newMessage.current.value;
-        props.updateNewMessageData(messageText);
+        props.dispatch({type: "UPDATE-NEW-MESSAGE-DATA", newMessageText: messageText});
     };
 
     return (

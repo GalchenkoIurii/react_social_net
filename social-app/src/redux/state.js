@@ -25,48 +25,55 @@ let store = {
     _callSubscriber() {
         console.log('state changed');
     },
+
     getState() {
         return this._state;
     },
-    addMessage() {
-        let newMessage = {
-            id: 4,
-            message: this._state.newMessageData
-        };
-
-        this._state.messagesData.push(newMessage);
-
-        this._state.newMessageData = "";
-
-        this._callSubscriber(this._state);
-    },
-    updateNewMessageData(newMessageText) {
-
-        this._state.newMessageData = newMessageText;
-
-        this._callSubscriber(this._state);
-    },
-    addPost() {
-        let newPost = {
-            id: 4,
-            title: "Fourth post",
-            postContent: this._state.newPostData
-        };
-
-        this._state.postsData.push(newPost);
-
-        this._state.newPostData = "";
-
-        this._callSubscriber(this._state);
-    },
-    updateNewPostData(newPostText) {
-
-        this._state.newPostData = newPostText;
-
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+        if(action.type === 'ADD-MESSAGE') {
+
+            let newMessage = {
+                id: 4,
+                message: this._state.newMessageData
+            };
+
+            this._state.messagesData.push(newMessage);
+
+            this._state.newMessageData = "";
+
+            this._callSubscriber(this._state);
+
+        } else if(action.type === 'UPDATE-NEW-MESSAGE-DATA') {
+
+            this._state.newMessageData = action.newMessageText;
+
+            this._callSubscriber(this._state);
+
+        } else if(action.type === 'ADD-POST') {
+
+            let newPost = {
+                id: 4,
+                title: "Fourth post",
+                postContent: this._state.newPostData
+            };
+
+            this._state.postsData.push(newPost);
+
+            this._state.newPostData = "";
+
+            this._callSubscriber(this._state);
+
+        } else if(action.type === 'UPDATE-NEW-POST-DATA') {
+
+            this._state.newPostData = action.newPostText;
+
+            this._callSubscriber(this._state);
+
+        }
     }
 };
 
