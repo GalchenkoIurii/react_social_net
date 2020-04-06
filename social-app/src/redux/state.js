@@ -1,3 +1,8 @@
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_DATA = 'UPDATE-NEW-MESSAGE-DATA';
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_DATA = 'UPDATE-NEW-POST-DATA';
+
 let store = {
     _state: {
         usersData: [
@@ -34,7 +39,7 @@ let store = {
     },
 
     dispatch(action) {
-        if(action.type === 'ADD-MESSAGE') {
+        if(action.type === ADD_MESSAGE) {
 
             let newMessage = {
                 id: 4,
@@ -47,13 +52,13 @@ let store = {
 
             this._callSubscriber(this._state);
 
-        } else if(action.type === 'UPDATE-NEW-MESSAGE-DATA') {
+        } else if(action.type === UPDATE_NEW_MESSAGE_DATA) {
 
             this._state.newMessageData = action.newMessageText;
 
             this._callSubscriber(this._state);
 
-        } else if(action.type === 'ADD-POST') {
+        } else if(action.type === ADD_POST) {
 
             let newPost = {
                 id: 4,
@@ -67,7 +72,7 @@ let store = {
 
             this._callSubscriber(this._state);
 
-        } else if(action.type === 'UPDATE-NEW-POST-DATA') {
+        } else if(action.type === UPDATE_NEW_POST_DATA) {
 
             this._state.newPostData = action.newPostText;
 
@@ -78,6 +83,29 @@ let store = {
 };
 
 export default store;
+
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    };
+};
+export const updateNewMessageDataActionCreator = (messageText) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_DATA,
+        newMessageText: messageText
+    };
+};
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    };
+};
+export const updateNewPostDataActionCreator = (postText) => {
+    return {
+        type: UPDATE_NEW_POST_DATA,
+        newPostText: postText
+    };
+};
 
 window.store = store;
 

@@ -1,17 +1,7 @@
 import React from 'react';
 import classes from './../Messages.module.css';
+import {addMessageActionCreator, updateNewMessageDataActionCreator} from "../../../redux/state";
 
-let addMessageActionCreator = () => {
-    return {
-        type: "ADD-MESSAGE"
-    };
-};
-let updateNewMessageDataActionCreator = (messageText) => {
-    return {
-        type: "UPDATE-NEW-MESSAGE-DATA",
-        newMessageText: messageText
-    };
-};
 
 const AddMessage = (props) => {
 
