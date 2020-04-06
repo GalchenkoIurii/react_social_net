@@ -1,17 +1,29 @@
 import React from 'react';
 import classes from './../Messages.module.css';
 
+let addMessageActionCreator = () => {
+    return {
+        type: "ADD-MESSAGE"
+    };
+};
+let updateNewMessageDataActionCreator = (messageText) => {
+    return {
+        type: "UPDATE-NEW-MESSAGE-DATA",
+        newMessageText: messageText
+    };
+};
+
 const AddMessage = (props) => {
 
     let newMessage = React.createRef();
 
     let addMessage = () => {
-        props.dispatch({type: "ADD-MESSAGE"});
+        props.dispatch(addMessageActionCreator());
     };
 
     let onMessageChange = () => {
         let messageText = newMessage.current.value;
-        props.dispatch({type: "UPDATE-NEW-MESSAGE-DATA", newMessageText: messageText});
+        props.dispatch(updateNewMessageDataActionCreator(messageText));
     };
 
     return (
