@@ -1,10 +1,6 @@
 import messagesReducer from "./messages-reducer";
 import postsReducer from "./posts-reducer";
 
-const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_DATA = 'UPDATE-NEW-MESSAGE-DATA';
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_DATA = 'UPDATE-NEW-POST-DATA';
 
 let store = {
     _state: {
@@ -97,29 +93,6 @@ let store = {
 };
 
 export default store;
-
-export const addMessageActionCreator = () => {
-    return {
-        type: ADD_MESSAGE
-    };
-};
-export const updateNewMessageDataActionCreator = (messageText) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_DATA,
-        newMessageText: messageText
-    };
-};
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    };
-};
-export const updateNewPostDataActionCreator = (postText) => {
-    return {
-        type: UPDATE_NEW_POST_DATA,
-        newPostText: postText
-    };
-};
 
 window.store = store;
 

@@ -29,3 +29,15 @@ const postsReducer = (state, action) => {
 };
 
 export default postsReducer;
+
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    };
+};
+export const updateNewPostDataActionCreator = (postText) => {
+    return {
+        type: UPDATE_NEW_POST_DATA,
+        newPostText: postText
+    };
+};

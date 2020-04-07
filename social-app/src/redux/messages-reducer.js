@@ -26,3 +26,15 @@ const messagesReducer = (state, action) => {
 };
 
 export default messagesReducer;
+
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    };
+};
+export const updateNewMessageDataActionCreator = (messageText) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_DATA,
+        newMessageText: messageText
+    };
+};
