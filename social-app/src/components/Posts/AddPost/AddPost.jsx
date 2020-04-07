@@ -5,15 +5,15 @@ import {addPostActionCreator, updateNewPostDataActionCreator} from "../../../red
 
 const AddPost = (props) => {
 
-    let newPost = React.createRef();
+    // let newPost = React.createRef(); ref={newPost}
 
     let addPost = () => {
         // props.addPost();
         props.dispatch(addPostActionCreator());
     };
 
-    let onPostChange = () => {
-        let postText = newPost.current.value;
+    let onPostChange = (event) => {
+        let postText = event.target.value;
         // props.updateNewPostData(postText);
         props.dispatch(updateNewPostDataActionCreator(postText));
     };
@@ -21,7 +21,7 @@ const AddPost = (props) => {
     return (
             <div className={classes.addPostWrapper}>
                 <h2>Add Post</h2>
-                    <textarea onChange={onPostChange} ref={newPost} value={props.newPostData} name="" id="" cols="30" rows="6" />
+                    <textarea onChange={onPostChange} value={props.newPostData} name="" id="" cols="30" rows="6" />
                     <button onClick={addPost}>Add Post</button>
             </div>
     );

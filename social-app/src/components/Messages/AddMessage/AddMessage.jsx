@@ -5,20 +5,20 @@ import {addMessageActionCreator, updateNewMessageDataActionCreator} from "../../
 
 const AddMessage = (props) => {
 
-    let newMessage = React.createRef();
+    // let newMessage = React.createRef(); ref={newMessage}
 
     let addMessage = () => {
         props.dispatch(addMessageActionCreator());
     };
 
-    let onMessageChange = () => {
-        let messageText = newMessage.current.value;
+    let onMessageChange = (event) => {
+        let messageText = event.target.value;
         props.dispatch(updateNewMessageDataActionCreator(messageText));
     };
 
     return (
              <div className={classes.addMessageWrapper}>
-                    <textarea onChange={onMessageChange} ref={newMessage} value={props.newMessageData} name="" id="" cols="30" rows="6" />
+                    <textarea onChange={onMessageChange} value={props.newMessageData} name="" id="" cols="30" rows="6" />
                     <button onClick={addMessage}>Add Message</button>
             </div>
     );
