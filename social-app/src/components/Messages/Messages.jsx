@@ -8,7 +8,7 @@ const Messages = (props) => {
 
     let users = props.state.usersData.map( user => <User name={user.name} avatar={user.avatarUrl} id={user.id} /> );
 
-    let messages = props.state.messagesData.map( message => <Message message={message.message} /> );
+    let messages = props.state.messages.messagesData.map( message => <Message message={message.message} /> );
 
     return (
         <section>
@@ -19,7 +19,7 @@ const Messages = (props) => {
                 </div>
                 <div className={classes.messages}>
                     {messages}
-                    <AddMessage newMessageData={props.state.newMessageData} dispatch={props.dispatch} />
+                    <AddMessage newMessageData={props.state.messages.newMessageData} dispatch={props.dispatch} />
                 </div>
             </div>
         </section>
