@@ -1,7 +1,16 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_DATA = 'UPDATE-NEW-POST-DATA';
 
-const postsReducer = (state, action) => {
+let initialState = {
+    postsData: [
+        {id: 1, title: "First post", postContent: "First post content"},
+        {id: 2, title: "Second post", postContent: "Second post content"},
+        {id: 3, title: "Third post", postContent: "Third post content"}
+    ],
+    newPostData: ""
+};
+
+const postsReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case ADD_POST: {

@@ -7,6 +7,6 @@ let reducers = combineReducers({
     postsReducer
 });
 
-let store = createStore();
+let store = createStore(reducers);
 
 export default store;
