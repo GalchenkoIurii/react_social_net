@@ -9,14 +9,17 @@ import {BrowserRouter} from "react-router-dom";
 let render = (state) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} dispatch={store.dispatch.bind(store)} />
+            <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
         </BrowserRouter>,
         document.getElementById('root'));
 };
 
-render(store.getState());
+render(store.getState.call(store));
 
-store.subscribe(render);
+store.subscribe(() => {
+    let state = store.getState.call(store);
+    render(state);
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

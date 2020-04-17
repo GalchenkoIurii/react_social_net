@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 import Contacts from "../Contacts/Contacts";
 
 const Nav = (props) => {
-
     return (
         <nav className={classes.nav}>
             <ul>
@@ -13,9 +12,9 @@ const Nav = (props) => {
                 <li className="item"><NavLink to="/posts" activeClassName={classes.active}>Posts</NavLink></li>
                 <li className="item"><NavLink to="/news" activeClassName={classes.active}>News</NavLink></li>
             </ul>
-            <Contacts state={props.state} />
+            <Contacts state={props.state.contacts} dispatch={props.dispatch} />
         </nav>
     );
-}
+};
 
 export default Nav;
