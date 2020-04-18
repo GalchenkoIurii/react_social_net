@@ -5,7 +5,7 @@ import Message from "./Message/Message";
 import AddMessage from "./AddMessage/AddMessage";
 
 const Messages = (props) => {
-debugger;
+
     let users = props.state.users.usersData.map( user => <User name={user.name} avatar={user.avatarUrl} id={user.id} /> );
 
     let messages = props.state.messages.messagesData.map( message => <Message message={message.message} /> );
