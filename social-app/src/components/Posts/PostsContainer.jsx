@@ -5,17 +5,19 @@ import AddPost from "./AddPost/AddPost";
 
 const PostsContainer = (props) => {
 
+    let state = props.store.getState();
+
     let addPost = () => {
-         props.dispatch(addPostActionCreator());
+         props.store.dispatch(addPostActionCreator());
     };
 
     let onPostChange = (postText) => {
         let action = updateNewPostDataActionCreator(postText);
-        props.dispatch(action);
+        props.store.dispatch(action);
     };
 
     return (
-            <AddPost addPost={addPost} onPostChange={onPostChange} newPostData={props.newPostData} />
+            <AddPost addPost={addPost} onPostChange={onPostChange} newPostData={state.posts.newPostData} />
     );
 };
 

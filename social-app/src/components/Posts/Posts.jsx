@@ -3,8 +3,8 @@ import classes from './Posts.module.css';
 import Post from "./Post/Post";
 
 const Posts = (props) => {
-
-    let posts = props.state.postsData.map( post => <Post title={post.title} postContent={post.postContent} /> );
+    debugger;
+    let posts = props.postsData.map(post => <Post title={post.title} postContent={post.postContent} />);
 
     return (
             <div className={classes.postsWrapper}>

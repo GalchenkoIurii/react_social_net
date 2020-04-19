@@ -15,9 +15,9 @@ const App = (props) => {
               <Header />
               <Nav state={props.state} dispatch={props.dispatch} />
               <div className="app-content">
-                  <Route path='/profile' render={ () => <Profile state={props.state} dispatch={props.dispatch} /> }/>
+                  <Route path='/profile' render={ () => <Profile state={props.state} dispatch={props.dispatch} store={props.store} /> }/>
                   <Route path='/messages' render={ () => <Messages state={props.state} dispatch={props.dispatch} /> }/>
-                  <Route path='/posts' render={ () => <Posts state={props.state.posts} /> }/>
+                  <Route path='/posts' render={ () => <Posts postsData={props.state.posts.postsData} /> }/>
                   <Route path='/news' component={News}/>
               </div>
           </div>
